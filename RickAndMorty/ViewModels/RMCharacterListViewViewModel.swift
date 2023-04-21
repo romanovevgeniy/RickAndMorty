@@ -7,12 +7,13 @@
 
 import UIKit
 
-final class CharacterListViewViewModel: NSObject {
+final class RMCharacterListViewViewModel: NSObject {
     func fetchCharacters() {
         RMService.shared.execute(.listCharacterRequests, expecting: RMGetAllCharactersResponse.self) { result in
             switch result {
             case .success(let model):
                 print(String(describing: model))
+                print(String(model.results.count))
             case .failure(let error):
                 print(String(describing: error))
             }
@@ -20,14 +21,24 @@ final class CharacterListViewViewModel: NSObject {
     }
 }
 
-extension CharacterListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemGreen
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier,
+            for: indexPath
+        ) as? RMCharacterCollectionViewCell else {
+            fatalError("Неподдерживаемая ячейка")
+        }
+        let viewModel = RMCharacterCollectionViewCellViewModel(
+            characterStatusName: "Evgeniy",
+            characterStatus: .alive,
+            characterImageUrl: URL(string: "https://rickandmortyapi.com/api/character/avatar/20.jpeg")
+        )
+        cell.configure(with: viewModel)
         return cell
     }
     
