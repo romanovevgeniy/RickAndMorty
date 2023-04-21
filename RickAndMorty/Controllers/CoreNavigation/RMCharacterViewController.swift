@@ -15,14 +15,6 @@ final class RMCharacterViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Персонажи"
         
-        RMService.shared.execute(.listCharacterRequests, expecting: RMGetAllCharactersResponse.self) { result in
-            switch result {
-            case .success(let model):
-                print(String(describing: model))
-            case .failure(let error):
-                print(String(describing: error))
-            }
-        }
     }
 }
  

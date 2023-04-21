@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		062E9AA629F1809F0079D6F1 /* RMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E9AA529F1809F0079D6F1 /* RMGetAllCharactersResponse.swift */; };
+		062E9AA829F281740079D6F1 /* CharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E9AA729F281740079D6F1 /* CharacterListViewViewModel.swift */; };
 		0676D79729EC24E300F88DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0676D79629EC24E300F88DBA /* AppDelegate.swift */; };
 		0676D79929EC24E300F88DBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0676D79829EC24E300F88DBA /* SceneDelegate.swift */; };
 		0676D79B29EC24E300F88DBA /* RMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0676D79A29EC24E300F88DBA /* RMTabBarController.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		062E9AA529F1809F0079D6F1 /* RMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
+		062E9AA729F281740079D6F1 /* CharacterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewViewModel.swift; sourceTree = "<group>"; };
 		0676D79329EC24E300F88DBA /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0676D79629EC24E300F88DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0676D79829EC24E300F88DBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		0676D7AD29EC289D00F88DBA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				062E9AA729F281740079D6F1 /* CharacterListViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				0676D7C529ED523000F88DBA /* RMEndpoint.swift in Sources */,
 				0676D7B429EC2AAA00F88DBA /* RMCharacter.swift in Sources */,
 				0676D7C329ED518600F88DBA /* RMRequest.swift in Sources */,
+				062E9AA829F281740079D6F1 /* CharacterListViewViewModel.swift in Sources */,
 				0676D7B929EC2DFE00F88DBA /* RMCharacterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
